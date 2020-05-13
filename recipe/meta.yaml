@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2020.4.22" %}
+{% set version = "2020.5.7" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5dbb2f551e94f09b996c71fd15158f1ba2a0d941841803a8e2a0cbcf587e478a
+  sha256: a1619cee96ddbec535bde5af9a78182e6739883409c3be57373fa3a7bd3bc85f
 
 build:
   number: 0
-  skip: true   # [py>=38 or py2k]
+  skip: true  # [py>=38 or py2k]
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
     - merge-pyi = pytype.tools.merge_pyi.main:main
