@@ -12,7 +12,7 @@ source:
 
 build:
   number: 0
-  skip: true  # [py>=38 or py2k]
+  skip: true  # [py>=39 or py2k]
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
     - merge-pyi = pytype.tools.merge_pyi.main:main
