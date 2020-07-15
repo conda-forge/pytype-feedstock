@@ -5,7 +5,7 @@ Home: https://google.github.io/pytype/
 
 Package license: Apache-2.0
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Python type inferencer
 
