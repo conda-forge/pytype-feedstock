@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2020.8.10" %}
+{% set version = "2020.8.17" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6385b6837a6db69c42eb477e8f7539c0b986ec6753eab4d811553d63d58a7785
+  sha256: 8c6f91da370194f48844ef1e7c9427e95150879fce2017407f8c415bc333f139
 
 build:
   number: 0
