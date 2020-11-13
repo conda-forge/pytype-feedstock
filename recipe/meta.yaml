@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2020.10.8" %}
+{% set version = "2020.11.12" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c5e7803dcafcc1c99d6d798ae5b534195f324487115ec2c54f21e0b5e0479430
+  sha256: 66f694abee3eea5a1c7f8ca040324f8b13b1ed01e308ba898bf36775b0a4c944
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py>=39 or py2k]
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
