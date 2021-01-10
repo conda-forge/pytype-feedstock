@@ -11,7 +11,7 @@ source:
   sha256: c5e7803dcafcc1c99d6d798ae5b534195f324487115ec2c54f21e0b5e0479430
 
 build:
-  number: 1
+  number: 2
   skip: true  # [py>=39 or py2k]
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
