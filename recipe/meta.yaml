@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2020.12.2" %}
+{% set version = "2021.1.8" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 79e7f3711a598ab8467495b5bc8c9e7d5e70c830eeed22e3b7baf9d56a540e77
+  sha256: 911ecff76f5febb5f6ba03c1b217eb5b79078b97a33b6e0aadf2e34f1d5a703e
 
 build:
   number: 0
@@ -27,13 +27,14 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
+    - pybind11
     - pip
-    - python
+    - python >=3.6,<3.9
   run:
     - attrs
     - importlab >=0.5.1
     - ninja
-    - python
+    - python >=3.6,<3.9
     - pyyaml >=3.11
     - six
     - typed-ast
