@@ -33,7 +33,7 @@ requirements:
   run:
     - attrs
     - importlab >=0.5.1
-    - ninja >=1.10.0.post2
+    - ninja >=1.10.1
     - python
     - pyyaml >=3.11
     - six
@@ -44,15 +44,12 @@ test:
     - pytype
     - pytype.overlays
   commands:
-    - pip check
     - annotate-ast --help
     - merge-pyi --help
     - pytd --help
     - pytype --help
     - pytype-single --help
     - pyxref --help
-  requires:
-    - pip
 
 about:
   home: https://google.github.io/pytype/
