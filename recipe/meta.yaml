@@ -29,12 +29,12 @@ requirements:
   host:
     - pybind11
     - pip
-    - python >=3.6,<3.9
+    - python
   run:
     - attrs
     - importlab >=0.5.1
     - ninja
-    - python >=3.6,<3.9
+    - python
     - pyyaml >=3.11
     - six
     - typed-ast
