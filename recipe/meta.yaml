@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2021.11.12" %}
+{% set version = "2021.12.08" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: ff9f5baec9c8fa9e8e04c7d7843aaf64e7e692d4693a2add78d23be064c98a40
+    sha256: 3a0f08a1a8811caf1c77abdff212d3ab4168b885bd3364ba35bf63adf003c705
 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
@@ -16,8 +16,8 @@ source:
   - url: https://github.com/pybind/pybind11/archive/c16da99.tar.gz
     sha256: c90ada3976e1e261c49e14e18cec7645f7a744408bb258e60f0accc0171f0948
     folder: pybind11
-  - url: https://github.com/python/typeshed/archive/8da23e0.tar.gz
-    sha256: 318698194d9407be1753f972fcfc0616e19b0c9d9c5998ebd3e0e3e148ace611
+  - url: https://github.com/python/typeshed/archive/3b6a52b.tar.gz
+    sha256: 1faa985b1f73527e4472f5f03c3a67466674418b1c2c9425202ddaca84721e19
     folder: typeshed
 
 build:
@@ -51,10 +51,8 @@ requirements:
     - toml
     - typed-ast >=1.5.0
     - libcst
-    - pyyaml >=3.11
-    - six
     - python
-    
+
 test:
   imports:
     - pytype
