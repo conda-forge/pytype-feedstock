@@ -7,12 +7,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e5a6111e9ae4e5e7e791510d74de0d831ef480f38039e5ce5a2b009bcb47b5fa
+  - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
+    sha256: ff9f5baec9c8fa9e8e04c7d7843aaf64e7e692d4693a2add78d23be064c98a40
+
+  - url: https://github.com/google/googletest/archive/e82d320.tar.gz
+    sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
+    folder: googletest
+  - url: https://github.com/pybind/pybind11/archive/c16da99.tar.gz
+    sha256: c90ada3976e1e261c49e14e18cec7645f7a744408bb258e60f0accc0171f0948
+    folder: pybind11
+  - url: https://github.com/python/typeshed/archive/8da23e0.tar.gz
+    sha256: 318698194d9407be1753f972fcfc0616e19b0c9d9c5998ebd3e0e3e148ace611
+    folder: typeshed
 
 build:
   number: 0
-  skip: true  # [py>=39 or py2k]
+#   skip: true  # [py>=39 or py2k]
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
     - merge-pyi = pytype.tools.merge_pyi.main:main
@@ -30,13 +40,17 @@ requirements:
     - pip
     - python
   run:
-    - attrs
-    - importlab >=0.5.1
-    - ninja
-    - python
-    - pyyaml >=3.11
-    - six
-    - typed-ast
+    - attrs >=21.2.0
+    - dataclasses
+    - importlab >=0.6.1
+    - ninja >=1.10.0
+    - tabulate
+    - toml
+    - typed-ast >=1.5.0
+    - libcst
+#     - pyyaml >=3.11
+#     - six
+#     - python
 
 test:
   imports:
