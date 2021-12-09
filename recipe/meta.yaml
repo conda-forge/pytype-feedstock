@@ -21,8 +21,7 @@ source:
     folder: typeshed
 
 build:
-  number: 2
-  skip: true  # [py>=39 or py2k]
+  number: 0
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
     - merge-pyi = pytype.tools.merge_pyi.main:main
