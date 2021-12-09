@@ -37,7 +37,7 @@ requirements:
     - {{ compiler('cxx') }}
   host:
     - pip
-    - python >=3.6,3.10
+    - python
   run:
     - attrs >=21.2.0
     - dataclasses
@@ -49,7 +49,7 @@ requirements:
     - libcst
     - pyyaml >=3.11
     - six
-    - python >=3.6,<3.10
+    - python
     
 test:
   imports:
