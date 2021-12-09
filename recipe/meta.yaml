@@ -16,8 +16,8 @@ source:
   - url: https://github.com/pybind/pybind11/archive/c16da99.tar.gz
     sha256: c90ada3976e1e261c49e14e18cec7645f7a744408bb258e60f0accc0171f0948
     folder: pybind11
-  - url: https://github.com/python/typeshed/archive/8da23e0.tar.gz
-    sha256: 318698194d9407be1753f972fcfc0616e19b0c9d9c5998ebd3e0e3e148ace611
+  - url: https://github.com/python/typeshed/archive/3b6a52b.tar.gz
+    sha256: ff9f5baec9c8fa9e8e04c7d7843aaf64e7e692d4693a2add78d23be064c98a40
     folder: typeshed
 
 build:
@@ -51,8 +51,6 @@ requirements:
     - toml
     - typed-ast >=1.5.0
     - libcst
-    - pyyaml >=3.11
-    - six
     - python
 
 test:
