@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2021.11.12" %}
+{% set version = "2021.12.08" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: ff9f5baec9c8fa9e8e04c7d7843aaf64e7e692d4693a2add78d23be064c98a40
+    sha256: 3a0f08a1a8811caf1c77abdff212d3ab4168b885bd3364ba35bf63adf003c705
 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
@@ -54,7 +54,7 @@ requirements:
     - pyyaml >=3.11
     - six
     - python
-    
+
 test:
   imports:
     - pytype
