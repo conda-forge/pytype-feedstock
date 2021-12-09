@@ -50,7 +50,7 @@ requirements:
     - libcst
 #     - pyyaml >=3.11
 #     - six
-#     - python
+    - python
 
 test:
   imports:
