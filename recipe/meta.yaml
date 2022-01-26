@@ -21,8 +21,8 @@ source:
     folder: typeshed
 
 build:
-  number: 0
-  skip: true  # [py<36 or py>=310 or win]
+  number: 1
+  skip: true  # [py>=310 or win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
@@ -44,14 +44,13 @@ requirements:
     - python
   run:
     - attrs >=21.2.0
-    - dataclasses
-    - importlab >=0.6.1
-    - ninja >=1.10.0
+    - importlab >=0.7
+    - libcst
+    - ninja >=1.10.0.post2
+    - python
     - tabulate
     - toml
-    - typed-ast >=1.5.0
-    - libcst
-    - python
+    - typed-ast >=1.5.0  # [py<38]
 
 test:
   requires:
