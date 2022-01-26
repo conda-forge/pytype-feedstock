@@ -54,6 +54,8 @@ requirements:
     - python
 
 test:
+  requires:
+    - pip
   imports:
     - pytype
     - pytype.overlays
@@ -64,6 +66,7 @@ test:
     - pytype --help
     - pytype-single --help
     - pyxref --help
+    - pip check
 
 about:
   home: https://google.github.io/pytype/
