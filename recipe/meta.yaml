@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2022.01.13" %}
+{% set version = "2022.01.31" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: e037bda62a3990caa04e239ef6692f2fe61aea4c83e6c799fa2246ab63a220af
+    sha256: a446875ceea1807b96f50a497fc3da0ca636a987ccc336491509340795a7c684
 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
