@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2022.02.08" %}
+{% set version = "2022.02.17" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 098a228002c037b9eabf240df95945d40120e61c770df3e8055a29dc5ed2d9d2
+    sha256: df1e15056ec162be0903ed6f516c2dd6a38e59ddaba57690e661cc0ab2c4ae43
 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
@@ -21,7 +21,7 @@ source:
     folder: typeshed
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py>=310 or win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
