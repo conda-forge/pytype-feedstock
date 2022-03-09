@@ -21,8 +21,8 @@ source:
     folder: typeshed
 
 build:
-  number: 0
-  skip: true  # [py>=310 or win]
+  number: 1
+  skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
     - annotate-ast = pytype.tools.annotate_ast.main:main
