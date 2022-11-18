@@ -21,7 +21,7 @@ source:
     folder: typeshed
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
