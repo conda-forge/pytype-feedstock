@@ -1,0 +1,47 @@
+diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyze_project/pytype_runner.py
+--- pytype/tools/analyze_project/pytype_runner.py
++++ pytype/tools/analyze_project/pytype_runner.py
+@@ -1,6 +1,7 @@
+ """Use pytype to analyze and infer types for an entire project."""
+ 
++import os
+ import collections
+ import itertools
+ import logging
+ import subprocess
+@@ -36,21 +37,22 @@
+ 
+ 
+ def _get_executable(binary, module=None):
+   """Get the path to the executable with the given name."""
+-  if binary == 'pytype-single':
+-    custom_bin = path_utils.join('out', 'bin', 'pytype')
+-    if sys.argv[0] == custom_bin:
+-      # The Travis type-check step uses custom binaries in pytype/out/bin/.
+-      return (([] if sys.platform != 'win32' else [sys.executable]) + [
+-          path_utils.join(
+-              path_utils.abspath(path_utils.dirname(custom_bin)),
+-              'pytype-single')
+-      ])
+-  if sys.executable is not None:
+-    return [sys.executable, '-m', module or binary]
+-  else:
+-    return [binary]
++#   if binary == 'pytype-single':
++#     custom_bin = path_utils.join('out', 'bin', 'pytype')
++#     if sys.argv[0] == custom_bin:
++#       # The Travis type-check step uses custom binaries in pytype/out/bin/.
++#       return (([] if sys.platform != 'win32' else [sys.executable]) + [
++#           path_utils.join(
++#               path_utils.abspath(path_utils.dirname(custom_bin)),
++#               'pytype-single')
++#       ])
++#   if sys.executable is not None:
++#     return [sys.executable, '-m', module or binary]
++#   else:
++#     return [binary]
++    return os.path.join(os.environ.get("CONDA_PREFIX", None), "bin", "ninja")
+ PYTYPE_SINGLE = _get_executable('pytype-single', 'pytype.single')
+ 
+ 
+ def resolved_file_to_module(f):
