@@ -67,7 +67,8 @@ test:
     - pytype-single --help
     - pyxref --help
     # enable after https://github.com/conda-forge/staged-recipes/pull/19098
-    # - pip check
+    # this fails; guarding against providing broken? pytype from now on
+    - pip check
   requires:
     - pip
 
