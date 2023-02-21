@@ -40,7 +40,7 @@ diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyz
 +#     return [sys.executable, '-m', module or binary]
 +#   else:
 +#     return [binary]
-+  return os.path.join(os.environ.get("CONDA_PREFIX", None), "bin", "ninja")
++  return [os.path.join(os.environ.get("CONDA_PREFIX", None), "bin", "ninja")]
  PYTYPE_SINGLE = _get_executable('pytype-single', 'pytype.single')
  
  
