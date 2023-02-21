@@ -71,7 +71,6 @@ test:
     - pytype-single --help
     - pyxref --help
     - python run_pytype.py # checks that pytype can actually run with a file input.
-    # enable after https://github.com/conda-forge/staged-recipes/pull/19098
     - pip check
   requires:
     - pip
