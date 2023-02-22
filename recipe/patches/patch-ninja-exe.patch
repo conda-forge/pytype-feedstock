@@ -1,7 +1,15 @@
 diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyze_project/pytype_runner.py
 --- pytype/tools/analyze_project/pytype_runner.py
 +++ pytype/tools/analyze_project/pytype_runner.py
-@@ -46,9 +46,10 @@
+@@ -1,6 +1,7 @@
+ """Use pytype to analyze and infer types for an entire project."""
+ 
++import importlib
+ import collections
+ import itertools
+ import logging
+ import subprocess
+@@ -46,9 +47,10 @@
                path_utils.abspath(path_utils.dirname(custom_bin)),
                'pytype-single')
        ])
