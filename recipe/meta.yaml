@@ -9,7 +9,10 @@ package:
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
     sha256: 5ad6439e5631077310a3217442bc9f13e91910d66755356828dbf15a3aacd2db
-
+    patches:
+      - patches/patch-ninja-exe.patch
+      - patches/remove-ninja-req.patch
+ 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
     folder: googletest
@@ -21,7 +24,7 @@ source:
     folder: typeshed
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
@@ -59,6 +62,8 @@ test:
   imports:
     - pytype
     - pytype.overlays
+  files:
+    - run_pytype.py
   commands:
     - annotate-ast --help
     - merge-pyi --help
@@ -66,8 +71,7 @@ test:
     - pytype --help
     - pytype-single --help
     - pyxref --help
-    # enable after https://github.com/conda-forge/staged-recipes/pull/19098
-    # this fails; guarding against providing broken? pytype from now on
+    - python run_pytype.py # checks that pytype can actually run with a file input.
     - pip check
   requires:
     - pip
