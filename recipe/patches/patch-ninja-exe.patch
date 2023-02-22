@@ -1,16 +1,24 @@
+From 53db9310cca269d6c65ebaaf92f560879b4202f8 Mon Sep 17 00:00:00 2001
+From: ngam <67342040+ngam@users.noreply.github.com>
+Date: Tue, 21 Feb 2023 22:53:58 -0500
+Subject: [PATCH] use ninja importability when python-ninja isn't available
+
+---
+ pytype/tools/analyze_project/pytype_runner.py | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
 diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyze_project/pytype_runner.py
---- pytype/tools/analyze_project/pytype_runner.py
-+++ pytype/tools/analyze_project/pytype_runner.py
-@@ -1,6 +1,7 @@
+index 9d09d8d0..c4579978 100644
+--- a/pytype/tools/analyze_project/pytype_runner.py
++++ b/pytype/tools/analyze_project/pytype_runner.py
+@@ -1,5 +1,6 @@
  """Use pytype to analyze and infer types for an entire project."""
  
 +import importlib
  import collections
  import itertools
  import logging
- import subprocess
-@@ -45,9 +46,10 @@
-           path_utils.join(
+@@ -46,7 +47,8 @@ def _get_executable(binary, module=None):
                path_utils.abspath(path_utils.dirname(custom_bin)),
                'pytype-single')
        ])
@@ -20,4 +28,3 @@ diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyz
      return [sys.executable, '-m', module or binary]
    else:
      return [binary]
- PYTYPE_SINGLE = _get_executable('pytype-single', 'pytype.single')
