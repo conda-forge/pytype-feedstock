@@ -9,14 +9,26 @@ diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyz
  import itertools
  import logging
  import subprocess
-@@ -36,8 +37,10 @@
+@@ -45,12 +46,19 @@
+           path_utils.join(
+               path_utils.abspath(path_utils.dirname(custom_bin)),
+               'pytype-single')
+       ])
+-  if sys.executable is not None:
+-    return [sys.executable, '-m', module or binary]
++  elif binary == 'ninja':
++    try:
++      import ninja
++      return [sys.executable, '-m', module or binary]
++    except ImportError:
++      return [binary]
+   else:
+-    return [binary]
++    if sys.executable is not None:
++      return [sys.executable, '-m', module or binary]
++    else:
++      return [binary]    
+ PYTYPE_SINGLE = _get_executable('pytype-single', 'pytype.single')
  
  
- def _get_executable(binary, module=None):
-   """Get the path to the executable with the given name."""
-+  if binary == "ninja":
-+    return [os.path.join(os.environ.get("CONDA_PREFIX", None), "bin", "ninja")]
-   if binary == 'pytype-single':
-     custom_bin = path_utils.join('out', 'bin', 'pytype')
-     if sys.argv[0] == custom_bin:
-       # The Travis type-check step uses custom binaries in pytype/out/bin/.
+ def resolved_file_to_module(f):
