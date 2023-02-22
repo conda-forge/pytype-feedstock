@@ -12,7 +12,7 @@ diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyz
 +    try:
 +      import ninja
 +      to_return = [sys.executable, '-m', module or binary]
-+    except ImportError:
++    except ModuleNotFoundError:
 +      to_return = [binary]
 +    return to_return
    else:
