@@ -15,7 +15,7 @@ diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyz
                'pytype-single')
        ])
 -  if sys.executable is not None:
-+  importable = importlib.util.find_spec(binary or binary)
++  importable = importlib.util.find_spec(module or binary)
 +  if sys.executable is not None and importable is not None:
      return [sys.executable, '-m', module or binary]
    else:
