@@ -1,27 +1,15 @@
 diff --git a/pytype/tools/analyze_project/pytype_runner.py b/pytype/tools/analyze_project/pytype_runner.py
 --- pytype/tools/analyze_project/pytype_runner.py
 +++ pytype/tools/analyze_project/pytype_runner.py
-@@ -45,12 +45,20 @@
-           path_utils.join(
+@@ -46,9 +46,10 @@
                path_utils.abspath(path_utils.dirname(custom_bin)),
                'pytype-single')
        ])
--  if sys.executable is not None:
+   if sys.executable is not None:
 -    return [sys.executable, '-m', module or binary]
-+  elif binary == 'ninja':
-+    try:
-+      import ninja
-+      to_return = [sys.executable, '-m', module or binary]
-+    except ModuleNotFoundError:
-+      to_return = [binary]
-+    return to_return
-   else:
--    return [binary]
-+    if sys.executable is not None:
++    if importlib.util.find_spec(binary or binary) is not None:
 +      return [sys.executable, '-m', module or binary]
-+    else:
-+      return [binary]
+   else:
+     return [binary]
  PYTYPE_SINGLE = _get_executable('pytype-single', 'pytype.single')
  
- 
- def resolved_file_to_module(f):
