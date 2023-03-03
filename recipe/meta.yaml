@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2023.02.17" %}
+{% set version = "2023.03.02" %}
 
 
 package:
@@ -8,11 +8,11 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 5ad6439e5631077310a3217442bc9f13e91910d66755356828dbf15a3aacd2db
+    sha256: c56fd93cf2e515855835b0058a1afe1c4436b2145b7ff9244250cb3843b6ccc0
     patches:
       - patches/patch-ninja-exe.patch
       - patches/remove-ninja-req.patch
- 
+
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
     folder: googletest
@@ -24,7 +24,7 @@ source:
     folder: typeshed
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
