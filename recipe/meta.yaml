@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2023.05.08" %}
+{% set version = "2023.05.24" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 8ef2beb729b4c787e5b9fde003ed5f33695b5a42e2450a1e2e658770a2e9b351
+    sha256: a47d651592154bdf1c3e35ef6933711e80b36a5615a4d523fdb99e9b4e6100f0
     patches:
       - patches/remove-ninja-req.patch
 
@@ -20,7 +20,7 @@ source:
     folder: typeshed
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
@@ -42,12 +42,12 @@ requirements:
   host:
     - pip
     - python
-    - pybind11 >=2.10.1 
+    - pybind11 >=2.10.1
   run:
     - attrs >=21.4.0
     - importlab >=0.8
     - jinja2 >=3.1.2
-    - libcst >=0.4.9
+    - libcst ==0.4.9
     - networkx <3.2
     - ninja >=1.10.0.post2
     - pydot >=1.4.2
