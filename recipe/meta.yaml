@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2023.06.16" %}
+{% set version = "2023.07.21" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: bf9ebc1aeed3f6e0b31e85cea69e0ef1baf350bc8198e360d69932f6ab89697b
+    sha256: 9061c22081812343492a8e7aa9cb1e4c63565df7c9ba2e1f11eabe7771339b26
     patches:
       - patches/remove-ninja-req.patch
 
@@ -47,7 +47,7 @@ requirements:
     - attrs >=21.4.0
     - importlab >=0.8
     - jinja2 >=3.1.2
-    - libcst ==0.4.9
+    - libcst >=1.0.1
     - networkx <3.2
     - ninja >=1.10.0.post2
     - pydot >=1.4.2
