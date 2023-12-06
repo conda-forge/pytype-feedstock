@@ -50,7 +50,6 @@ requirements:
     - libcst >=1.0.1
     - networkx <3.2
     - ninja >=1.10.0.post2
-    - pybind11 >=2.10.1
     - pycnite >=2023.10.11
     - pydot >=1.4.2
     - python
