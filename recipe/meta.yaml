@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2023.09.11" %}
+{% set version = "2023.10.17" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 2255c9fcffe1b498a8706a5f9b13cc565bd4e368ca329d1e3aa7519e6e569126
+    sha256: 813ce43c2ecf4ca4b5eb7e63992c75a354299274f6c264c29fa5ef9783451a6e
     patches:
       - patches/remove-ninja-req.patch
 
@@ -50,6 +50,7 @@ requirements:
     - libcst >=1.0.1
     - networkx <3.2
     - ninja >=1.10.0.post2
+    - pycnite >=2023.10.11
     - pydot >=1.4.2
     - python
     - tabulate >=0.8.10
@@ -79,6 +80,8 @@ about:
   summary: Python type inferencer
   license: Apache-2.0
   license_file: LICENSE
+  dev_url: https://github.com/google/pytype
+  doc_url: https://google.github.io/pytype/
 
 extra:
   recipe-maintainers:
