@@ -1,5 +1,5 @@
 {% set name = "pytype" %}
-{% set version = "2023.12.07" %}
+{% set version = "2023.12.08" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://github.com/google/pytype/archive/refs/tags/{{ version }}.tar.gz
-    sha256: 9ead055907cf560b0fbf264c1c75313e5957e36ddbc99716141dbcc732c08fc5
+    sha256: 7a9fb9fb141f50f6d8865e52e27a0f02a5e66019c3b13923b972b1aed5cce7b1
     patches:
       - patches/remove-ninja-req.patch
 
