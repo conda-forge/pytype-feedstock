@@ -11,6 +11,7 @@ source:
     sha256: f81c5f3599cabf25e4bcc835a41442ce124c1fd0e1704f4f8f6e964e6110e673
     patches:
       - patches/remove-ninja-req.patch
+      - patches/fix-pytype-single.patch
 
   - url: https://github.com/google/googletest/archive/e82d320.tar.gz
     sha256: 7acdbac36f80ca68126c9112cf1e60132372aff81db7a14f08cb49e6e00af536
