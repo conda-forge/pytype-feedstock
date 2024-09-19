@@ -20,7 +20,7 @@ source:
     folder: typeshed
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   # no windows builds here: https://pypi.org/project/pytype/#files
   entry_points:
@@ -38,6 +38,7 @@ requirements:
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
     - pybind11 >=2.10.1                      # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - pip
